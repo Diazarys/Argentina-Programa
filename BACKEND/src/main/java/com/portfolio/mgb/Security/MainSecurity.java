@@ -1,9 +1,9 @@
 
 package com.portfolio.mgb.Security;
 
-import com.portfolio.mgb.Security.Jwt.JwtEntryPoint;
-import com.portfolio.mgb.Security.Jwt.JwtTokenFilter;
 import com.portfolio.mgb.Security.Service.UserDetailsImpl;
+import com.portfolio.mgb.Security.jwt.JwtEntryPoint;
+import com.portfolio.mgb.Security.jwt.JwtTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
