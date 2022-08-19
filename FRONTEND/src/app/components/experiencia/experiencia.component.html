@@ -1,39 +1,31 @@
 <div class="row">
     <h1 style="color:white" id="neon">Experiencia laboral</h1>
-    <div class="col-lg-1"></div>
-    <div class="col-lg-11">
-         <ul style="color:white">
-
-             <li><h1 style="color:white" >Trabajo1</h1><h3 style="color:white">(years)</h3></li>
-             <p style="color:white">Lorem ipsum dolor sit amet consectetur,
-             adipisicing elit.Laboriosam atque fuga
-             asperiores sit,esse debitis illum.
-             Laboriosam quos,perspiciatis deserunt sequi
-             nulla officiis aspernatur cum,consectetur,
-             error veniam excepturi laudantium.
-            </p>
-        </ul>
-         <ul style="color:white">
-
-             <li><h1 style="color:white">Trabajo2</h1><h3 style="color:white">(years)</h3></li>
-             <p style="color:white">Lorem ipsum dolor sit amet consectetur,
-             adipisicing elit.Laboriosam atque fuga
-             asperiores sit,esse debitis illum.
-             Laboriosam quos,perspiciatis deserunt sequi
-             nulla officiis aspernatur cum,consectetur,
-             error veniam excepturi laudantium.
-            </p>
-        </ul>
-         <ul style="color:white">
-
-             <li><h1 style="color:white">Trabajo3</h1><h3 style="color:white">(years)</h3></li>
-             <p style="color:white">Lorem ipsum dolor sit amet consectetur,
-             adipisicing elit.Laboriosam atque fuga
-             asperiores sit,esse debitis illum.
-             Laboriosam quos,perspiciatis deserunt sequi
-             nulla officiis aspernatur cum,consectetur,
-             error veniam excepturi laudantium.
-            </p>
-         </ul>
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-dark" routerLink="/nuevaexp" *ngIf="isLogged">
+                Nueva Experiencia
+            </button>
+        </div>
+    
+        <div class="col lg 1"></div>
+        <div class="col-lg-11">
+            <table class="table">
+                <tbody>
+                    <tr *ngFor="let Experiencia of expe">
+                        <td>
+                            <h2 style="color:rgb(255, 255, 255)" id="neon">{{Experiencia.nombreE}}</h2>
+                        </td>
+                        <td style="color:rgb(255, 255, 255)" id="neon">{{Experiencia.descripcionE}}</td>
+                        <td *ngIf="isLogged">
+                            <button class="btn btn-light" routerLink="/editexp/{{Experiencia.id}}">
+                                <i class="bi bi-pencil-fill"></i> EDITAR</button>
+                        </td>
+                        <td *ngIf="isLogged">
+                            <button class="btn btn-danger" (click)="delete(Experiencia.id)">
+                                <i class="bi bi-trash-fill"></i> BORRAR</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    
     </div>
-</div>
