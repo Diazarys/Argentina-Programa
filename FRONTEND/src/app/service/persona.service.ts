@@ -7,11 +7,11 @@ import { persona } from '../model/persona.model';
   providedIn:'root'
 })
 export class PersonaService {
-  URL = 'https://bkdproyecto.herokuapp.com/personas/';
+  URL = 'https://bkdproyecto.herokuapp.com/';
   constructor(private http: HttpClient) { }
 
    public getPersona(): Observable<persona>{
-  return this.http.get<persona>(this.URL+ 'personas/traer/perfil');
+  return this.http.get<persona>(this.URL+ 'personas/traer/perfil/');
    }
 
 
